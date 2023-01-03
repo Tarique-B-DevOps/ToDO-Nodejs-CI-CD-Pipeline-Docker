@@ -8,9 +8,9 @@ CI/CD Pipeline for Nodejs Todo list app with  Mongodb. This Pipeline Can be used
 ----------
 # Pre-requisites
 - AWS Account
-- Jenkins Master (Controller)
+- Jenkins Controller
 - Jenkins Slave (Node)
-- Mondodb Database URI
+- Mongodb Database URI
 ----------
 
 
