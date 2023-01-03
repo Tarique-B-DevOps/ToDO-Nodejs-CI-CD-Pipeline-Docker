@@ -20,11 +20,11 @@ CI/CD Pipeline for Nodejs Todo list app with  Mongodb. This Pipeline Can be used
 ![Screenshot (4)](https://user-images.githubusercontent.com/86839948/210342851-59994987-0ac2-48fd-bf27-fb8274e6710e.jpg)
 ![Screenshot (6)](https://user-images.githubusercontent.com/86839948/210341537-22cea2cf-2b41-4767-b2ab-8dbebdf8c79e.jpg)
 
-- App Process On Node
+- App Process On Target Node
 
 ![Screenshot (9)](https://user-images.githubusercontent.com/86839948/210341544-fb72557d-4601-4086-959c-feb38684a083.jpg)
 
-- App Running on Node
+- App Running on Target Node
 
 ![Screenshot (11)](https://user-images.githubusercontent.com/86839948/210343788-faf5d9b5-2422-4509-b423-65375b8f7293.jpg)
 ![Screenshot (5)](https://user-images.githubusercontent.com/86839948/210341314-57df0001-5794-4dce-9537-fbcc7177a949.jpg)
