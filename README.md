@@ -11,6 +11,7 @@ CI/CD Pipeline for Nodejs Todo list app with  Mongodb. This Pipeline Can be used
 - Jenkins Controller
 - Jenkins Slave (Node)
 - Mongodb Database URI
+- Jenkins and Github Integration
 ----------
 
 
