@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
    /* Install app dependencies and build if you have build script */ 
     stages {
         stage('Build') {
