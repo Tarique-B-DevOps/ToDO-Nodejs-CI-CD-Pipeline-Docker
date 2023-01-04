@@ -1,0 +1,51 @@
+pipeline {
+
+// Set global environment variables 
+  environment {
+    registry = "mtariqueb/node_todoapp"
+    registryCredential = 'tarique-dockerhub'
+    dockerImage = ''
+  }
+  // Build Docker image from Dockerfile present at the root of repository  
+  agent any
+  stages {
+    stage ('Build Docker Image'){
+        steps {
+            script{
+                dockerImage = docker.build registry + ":$BUILD_NUMBER"
+
+            }
+        
+        }
+    }
+// Push the image to dockerhub repository 
+    stage ('Push Image to Dockerhub'){
+        steps {
+            script {
+                docker.withRegistry( '', registryCredential ) {
+                dockerImage.push()
+
+                }
+            }
+        }
+    }
+
+// Pull the image pushed to dockerhub and Spinup the container on target agent to deploy the application 
+    stage ('Spinup the App Container on Node') {
+    agent {label 'MASTER-MAIN'}
+        steps {
+            script {
+                dockerImage.pull()
+                dockerImage.run ("-p 3000:3000 --name todoapp_prod_$BUILD_NUMBER")
+           }
+        }
+    }
+// Un-tag and remove images to clean up the jenkins controller 
+    stage ('Un-tag & Remove Images') {
+        steps{
+            sh "docker rmi --force $registry:$BUILD_NUMBER"
+            
+        }
+    }
+    }
+}
