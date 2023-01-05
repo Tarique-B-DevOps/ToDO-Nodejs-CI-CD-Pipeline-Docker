@@ -1,5 +1,8 @@
 FROM node:18
 
+# Install PM2
+RUN npm install pm2 -g
+
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -8,14 +11,11 @@ COPY package*.json ./
 
 # Install app dependencies
 RUN npm install
-# If you are building your code for production
-#RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
 
-# Container port
-EXPOSE 3000
 
-# Start application
-CMD [ "node", "app.js" ]
+#Start Application Process
+EXPOSE 3000
+CMD [ "pm2-runtime","start","app.js" ]
