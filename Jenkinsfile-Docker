@@ -32,7 +32,7 @@ pipeline {
 
 // Pull the image pushed to dockerhub and Spinup the container on target agent to deploy the application 
     stage ('Spinup the App Container on Node') {
-    agent {label 'MASTER-MAIN'}
+    agent {label 'PROD-NODE'}
         steps {
             script {
                 dockerImage.pull()
