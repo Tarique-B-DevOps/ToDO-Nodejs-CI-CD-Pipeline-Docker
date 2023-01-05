@@ -3,8 +3,8 @@ CI/CD Pipeline for Nodejs Todo list app with Mongodb.
 
 ----------
 - Automation Server = Jenkins.
-- Pipeline Type = Script from SCM.
-- Target Cloud Infra = AWS EC2 Instance.
+- Pipeline Type = Declarative (Scripts from SCM).
+- Target Cloud Infra = AWS
 ----------
 # Pre-requisites
 - AWS Account
